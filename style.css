@@ -317,3 +317,57 @@ body.light .account-card:not(.silver):not(.gold):not(.purple) { color: #f4f7fb; 
 @media (prefers-reduced-motion: reduce) {
   *,*::before,*::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
+
+/* FINOVA onboarding */
+.onboarding {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, .8fr);
+  align-items: center;
+  gap: clamp(28px, 6vw, 90px);
+  max-width: 1200px;
+  margin: auto;
+  padding: clamp(22px, 5vw, 65px);
+  animation: enter .6s ease both;
+}
+.onboarding-logo {
+  position: absolute;
+  top: 25px;
+  left: clamp(22px, 5vw, 65px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.onboarding-content { padding-top: 45px; }
+.onboarding-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 25px;
+}
+.onboarding-points span {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.025);
+  border-radius: 12px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.onboarding-form-card { width: 100%; max-width: 460px; justify-self: end; }
+.onboarding-form-card > small {
+  display: block;
+  font-size: 11px;
+  line-height: 1.6;
+  margin-top: 18px;
+}
+@media (max-width: 760px) {
+  .onboarding {
+    grid-template-columns: 1fr;
+    align-content: start;
+    gap: 24px;
+    padding: 105px 18px 30px;
+  }
+  .onboarding-content { padding-top: 0; }
+  .onboarding-form-card { max-width: none; }
+  .onboarding-logo { top: 20px; left: 18px; }
+}
